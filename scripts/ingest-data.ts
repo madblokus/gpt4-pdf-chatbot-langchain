@@ -29,7 +29,6 @@ export const run = async () => {
 
     const docs = await textSplitter.splitDocuments(rawDocs);
     console.log('split docs', docs);
-(
 
 
     console.log('creating vector store...');
