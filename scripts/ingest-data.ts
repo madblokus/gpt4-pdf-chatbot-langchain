@@ -29,11 +29,14 @@ export const run = async () => {
 
     const docs = await textSplitter.splitDocuments(rawDocs);
     console.log('split docs', docs);
+(
+
 
     console.log('creating vector store...');
     /*create and store the embeddings in the vectorStore*/
     const embeddings = new OpenAIEmbeddings();
     const index = pinecone.Index(PINECONE_INDEX_NAME); //change to your own index name
+
 
     //embed the PDF documents
     await PineconeStore.fromDocuments(docs, embeddings, {
